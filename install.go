@@ -175,6 +175,12 @@ func install(developer bool) error {
 				),
 				`root`: `/usr/lib/mozilla/native-messaging-hosts`,
 			},
+			`librewolf`: {
+				def: filepath.Join(
+					u.HomeDir, `.librewolf`, `native-messaging-hosts`,
+				),
+				`root`: `/usr/lib/mozilla/native-messaging-hosts`,
+			},
 		},
 		`darwin`: {
 			def: {
@@ -207,6 +213,12 @@ func install(developer bool) error {
 				),
 				`root`: `/Library/Application Support/Mozilla/NativeMessagingHosts`,
 			},
+			`librewolf`: {
+				def: filepath.Join(
+					u.HomeDir, `Library`, `Application Support`, `Mozilla`, `NativeMessagingHosts`,
+				),
+				`root`: `/Library/Application Support/Mozilla/NativeMessagingHosts`,
+			},
 		},
 	}
 
@@ -216,6 +228,7 @@ func install(developer bool) error {
 	menu.AddMenuItem(`Brave`, `brave`)
 	menu.AddMenuItem(`Vivaldi`, `vivaldi`)
 	menu.AddMenuItem(`Firefox`, `firefox`)
+	menu.AddMenuItem(`LibreWolf`, `libreWolf`)
 	menu.AddMenuItem(`Custom`, `custom`)
 
 	var (
